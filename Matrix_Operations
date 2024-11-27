@@ -1,0 +1,26 @@
+def get_column_sum(matrix, column_index):
+    column_sum = sum(row[column_index] for row in matrix if column_index < len(row))
+    return column_sum
+
+def get_row_average(matrix, row_index):
+ 
+    if row_index < len(matrix):
+        row = matrix[row_index]
+        row_average = sum(row) / len(row)
+        return row_average
+    else:
+        raise IndexError("Row index out of range.")
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+column_index = 1
+column_sum = get_column_sum(matrix, column_index)
+print(f"Sum of column {column_index}: {column_sum}")
+
+row_index = 2
+row_average = get_row_average(matrix, row_index)
+print(f"Average of row {row_index}: {row_average}")
